@@ -1,53 +1,6 @@
 import React, { useState } from "react";
-import { Search } from "react-feather";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-
-const searchBarStyle = {
-  width: "70%",
-  padding: "1.4%",
-  outline: "none",
-  border: "none",
-};
-
-const searchButtonStyle = {
-  //   border: "none",
-};
-
-const SearchBar = (props) => {
-  const { onSearch, inputOnChange } = props;
-
-  return (
-    <>
-      <div className="input-group bg-blue-400">
-        <div className="input-group-prepend">
-          <span className="input-group-text h-100" id="basic-addon1">
-            <Search color="#182252" />
-          </span>
-        </div>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter Your Search Key"
-          style={searchBarStyle}
-          onChange={inputOnChange}
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <div className="input-group-append">
-          <button
-            onClick={onSearch}
-            style={searchButtonStyle}
-            className="btn btn-lg btn-blue-800"
-            type="button"
-          >
-            Search
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
 
 const App = () => {
   const [myOptions, setMyOptions] = useState([]);
@@ -86,8 +39,6 @@ const App = () => {
           />
         )}
       />
-
-      <SearchBar />
     </div>
   );
 };
